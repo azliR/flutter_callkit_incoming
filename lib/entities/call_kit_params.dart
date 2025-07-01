@@ -28,6 +28,7 @@ class CallKitParams {
     this.ios,
     this.onDecline,
     this.onSnooze,
+    this.onTimeout,
   });
 
   final String? id;
@@ -51,6 +52,8 @@ class CallKitParams {
   final Function(String reason)? onDecline;
   @JsonKey(includeFromJson: false, includeToJson: false)
   final Function(String reason)? onSnooze;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  final Function(String reason)? onTimeout;
 
   factory CallKitParams.fromJson(Map<String, dynamic> json) =>
       _$CallKitParamsFromJson(json);

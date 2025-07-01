@@ -47,6 +47,8 @@ class FlutterCallkitIncoming {
         params.onDecline?.call(call.arguments);
       } else if (call.method == 'CALL_SNOOZED_CUSTOM') {
         params.onSnooze?.call(call.arguments);
+      } else if (call.method == 'CALL_TIMEOUT_CUSTOM') {
+        params.onTimeout?.call(call.arguments);
       }
     });
   }
